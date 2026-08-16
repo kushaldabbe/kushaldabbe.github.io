@@ -158,7 +158,7 @@ order: 4
   <div>
     <h2 class="kd-name">Kushal Dabbe</h2>
     <p class="kd-tag">LLM inference · ML systems · Computer vision</p>
-    <p class="kd-loc"><span class="kd-dot"></span>Software Engineer at Rakuten Mobile · Tokyo, Japan</p>
+    <p class="kd-loc"><span class="kd-dot"></span>🗼 Tokyo, Japan</p>
   </div>
 </div>
 
