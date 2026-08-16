@@ -1,0 +1,7 @@
+# Override Chirpy locale: remove license texts.
+# `false` wins the data merge over the theme and is falsy in Liquid,
+# so both license blocks are skipped entirely.
+copyright:
+  license:
+    template: false
+  brief: false
