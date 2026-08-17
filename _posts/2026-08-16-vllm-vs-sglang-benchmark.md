@@ -1,6 +1,7 @@
 ---
 title: vLLM vs SGLang — Benchmarking LLM Serving Engines on an RTX 4090
 date: 2026-08-16 00:00:00 +0900
+pin: true
 ---
 
 I benchmarked [vLLM](https://github.com/vllm-project/vllm) and [SGLang](https://github.com/sgl-project/sglang) on a single RTX 4090, serving `meta-llama/Meta-Llama-3-8B-Instruct` in fp16. I wanted to see how the two leading open-source serving engines compare under identical load. The harness is in [inference-bench](https://github.com/kushaldabbe/inference-bench), with all raw data checked in.
