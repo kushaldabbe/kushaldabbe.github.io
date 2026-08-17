@@ -7,6 +7,15 @@ order: 5
 Selected projects I've built, each with the stack and the hard parts.
 Write-ups live on the [blog]({{ '/archives/' | relative_url }}); code lives on [GitHub](https://github.com/kushaldabbe).
 
+## [inference-bench]({{ '/posts/vllm-vs-sglang-benchmark/' | relative_url }})
+
+*Python · vLLM · SGLang · TGI · asyncio · benchmarking*
+
+- Benchmark and compare LLM serving engines on a single GPU: **vLLM vs SGLang** (Llama-3-8B, RTX 4090, fp16). Full write-up on the [blog](/posts/vllm-vs-sglang-benchmark/).
+- Reproducible harness: per-engine virtualenvs (no dependency collisions), semaphore-gated concurrency, per-request JSONL + aggregated summaries. **960 requests/engine, 0% errors.**
+- Key result: both engines are effectively tied on throughput (~56-60 tok/s at c=1, ~1000-1080 tok/s at c=32 via continuous batching). Throughput scales ~18x while latency stays flat.
+- Methodology rigor: fixed 128-token outputs (prompt engineered to avoid early EOS) and throughput measured as tokens/cell-wall-time, not tokens/slowest-request.
+
 ## [autolabel3d](https://github.com/kushaldabbe/autolabel3d)
 
 *Python · PyTorch · Grounding DINO · SAM 2 · Depth Anything V2 · ONNX Runtime*
@@ -40,5 +49,5 @@ Write-ups live on the [blog]({{ '/archives/' | relative_url }}); code lives on [
 
 {: .prompt-tip }
 >
-> More on the way: LLM inference benchmarks, fine-tuning experiments, and serving-infrastructure notes.
+> More on the way: fine-tuning experiments, serving-infrastructure notes, and more inference benchmarks.
 >
