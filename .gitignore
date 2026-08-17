@@ -7,6 +7,9 @@ vendor
 .jekyll-metadata
 _site
 
+# Drafts (not published until moved to _posts)
+_drafts/
+
 # RubyGems
 *.gem
 
