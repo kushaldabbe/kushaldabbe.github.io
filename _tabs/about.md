@@ -167,6 +167,10 @@ vision. My focus now is the **LLM inference and training stack**: serving
 optimization, distributed training, fine-tuning, and benchmarking. This site
 tracks the projects and notes from that work.
 
+## Milestones
+
+{% include kd-gh-pr-card.html gh_body='<strong>First merged contribution to vLLM.</strong> MoE expert packing recomputed LoRA scaling as <code>alpha/rank</code> and dropped the stored rsLoRA factor (<code>alpha/&radic;r</code>), so adapters trained with <code>use_rslora</code> applied a delta &radic;r times weaker &mdash; silently. The fix stores and reuses the scaling factor; the test suite went from 3 failed / 2 passed to 5 passed.' %}
+
 ## Experience
 
 <ul class="kd-timeline">
