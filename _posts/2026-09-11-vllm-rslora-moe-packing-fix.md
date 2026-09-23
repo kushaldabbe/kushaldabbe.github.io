@@ -3,7 +3,7 @@ title: "First vLLM PR merged: rsLoRA scaling in MoE expert packing"
 date: 2026-09-11 13:30:00 +0900
 ---
 
-My first contribution to [vLLM](https://github.com/vllm-project/vllm) was merged on
+My first contribution to [vLLM](https://github.com/vllm-project/vllm) merged on
 11 September 2026: [PR #55548](https://github.com/vllm-project/vllm/pull/55548),
 fixing [issue #55545](https://github.com/vllm-project/vllm/issues/55545).
 

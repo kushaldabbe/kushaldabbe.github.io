@@ -169,7 +169,19 @@ tracks the projects and notes from that work.
 
 ## Milestones
 
-{% include kd-gh-pr-card.html gh_body='<strong>First merged contribution to vLLM.</strong> MoE expert packing recomputed LoRA scaling as <code>alpha/rank</code> and dropped the stored rsLoRA factor (<code>alpha/&radic;r</code>), so adapters trained with <code>use_rslora</code> applied a delta &radic;r times weaker &mdash; silently. The fix stores and reuses the scaling factor; the test suite went from 3 failed / 2 passed to 5 passed.' %}
+{% include kd-gh-pr-card.html
+  repo="vllm-project/vllm" num=56579 title="[Bugfix][Attention] Avoid NaN in the Triton softcap for large attention logits"
+  url="https://github.com/vllm-project/vllm/pull/56579"
+  author="kushaldabbe" avatar_id=72650064 commits=2 base="main" head="fix/triton-softcap-overflow"
+  files=2 add=47 del=5 when="22 Sep 2026"
+  gh_body='<strong>NaN poisoning in Triton attention.</strong> The softcap computed tanh via raw exponentials; scores above ~4400 overflowed to <code>inf</code>, so the ratio became <code>inf/inf = NaN</code> and the whole attention row died; reachable on Gemma-2 style models that use softcapping precisely because their logits are large. The fix rewrites tanh in a saturating form; the new test fails on main and passes with the fix, with 336 softcap tests green.' %}
+
+{% include kd-gh-pr-card.html
+  repo="vllm-project/vllm" num=55548 title="[Bugfix][LoRA] Use stored rsLoRA scaling factor in MoE expert packing"
+  url="https://github.com/vllm-project/vllm/pull/55548"
+  author="kushaldabbe" avatar_id=72650064 commits=5 base="main" head="fix/lora-moe-rslora-scaling"
+  files=2 add=56 del=3 when="11 Sep 2026"
+  gh_body='<strong>First merged contribution to vLLM.</strong> MoE expert packing recomputed LoRA scaling as <code>alpha/rank</code> and dropped the stored rsLoRA factor (<code>alpha/&radic;r</code>), so adapters trained with <code>use_rslora</code> applied a delta &radic;r times weaker - silently. The fix stores and reuses the scaling factor; the test suite went from 3 failed / 2 passed to 5 passed.' %}
 
 ## Experience
 

@@ -1,15 +1,15 @@
 <div class="kd-gh-card">
   <div class="kd-gh-toprow">
-    <img class="kd-gh-avatar" src="https://avatars.githubusercontent.com/u/72650064?v=4" alt="kushaldabbe avatar">
+    <img class="kd-gh-avatar" src="https://avatars.githubusercontent.com/u/{{ include.avatar_id }}?v=4" alt="{{ include.author }} avatar">
     <div class="kd-gh-grow">
-      <div class="kd-gh-byline"><strong>kushaldabbe</strong> merged 5 commits into <code class="kd-gh-branch">main</code> from <code class="kd-gh-branch">fix/lora-moe-rslora-scaling</code></div>
+      <div class="kd-gh-byline"><strong>{{ include.author }}</strong> merged {{ include.commits }} commits into <code class="kd-gh-branch">{{ include.base }}</code> from <code class="kd-gh-branch">{{ include.head }}</code> &middot; {{ include.when }}</div>
     </div>
     <span class="kd-gh-badge"><i class="fas fa-code-branch"></i> Merged</span>
   </div>
-  <div class="kd-gh-title"><a href="https://github.com/vllm-project/vllm/pull/55548">[Bugfix][LoRA] Use stored rsLoRA scaling factor in MoE expert packing <span class="kd-gh-num">#55548</span></a></div>
+  <div class="kd-gh-title"><a href="{{ include.url }}">{{ include.title }} <span class="kd-gh-num">#{{ include.num }}</span></a></div>
   <div class="kd-gh-diffstat">
-    <span>2 files changed</span>
-    <span><span class="kd-gh-add">+56</span> <span class="kd-gh-del">&minus;3</span></span>
+    <span>{{ include.files }} files changed</span>
+    <span><span class="kd-gh-add">+{{ include.add }}</span> <span class="kd-gh-del">&minus;{{ include.del }}</span></span>
     <span><span class="kd-gh-sq kd-gh-sq-add"></span><span class="kd-gh-sq kd-gh-sq-add"></span><span class="kd-gh-sq kd-gh-sq-add"></span><span class="kd-gh-sq kd-gh-sq-add"></span><span class="kd-gh-sq kd-gh-sq-del"></span></span>
   </div>
   <p class="kd-gh-body">{{ include.gh_body }}</p>

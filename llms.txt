@@ -9,6 +9,7 @@
 - [PitchTwin](https://kushaldabbe.github.io/posts/pitchtwin/): real-time 3D digital-twin of a football match, reconstructed from 2D broadcast video.
 - [vLLM vs SGLang benchmark](https://kushaldabbe.github.io/posts/vllm-vs-sglang-benchmark/): benchmarking LLM serving engines on a single RTX 4090 with Llama-3-8B fp16.
 - [First vLLM PR merged](https://kushaldabbe.github.io/posts/vllm-rslora-moe-packing-fix/): bugfix story for vLLM #55548 — rsLoRA scaling dropped in MoE expert packing; merged upstream 11 September 2026.
+- [Second vLLM PR merged](https://kushaldabbe.github.io/posts/vllm-triton-softcap-nan-fix/): bugfix story for vLLM #56579 — NaN poisoning in the Triton attention softcap for large logits; merged upstream 22 September 2026.
 
 ## Optional
 
