@@ -76,6 +76,9 @@
   font-weight: 400;
 }
 .kd-gh-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   font-weight: 700;
   font-size: 1.02rem;
   margin: 0 0 0.35rem;
@@ -83,6 +86,16 @@
 }
 .kd-gh-title a {
   color: inherit;
+  min-width: 0;
+}
+.kd-gh-repo-logo {
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  border-radius: 5px;
+  background: #fff;
+  padding: 2px;
+  box-shadow: 0 0 0 1px rgba(128, 128, 128, 0.28);
 }
 .kd-gh-branch {
   font-family: SFMono-Regular, Menlo, Consolas, monospace;

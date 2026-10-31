@@ -173,6 +173,7 @@ tracks the projects and notes from that work.
   repo="vllm-project/vllm" num=56579 title="[Bugfix][Attention] Avoid NaN in the Triton softcap for large attention logits"
   url="https://github.com/vllm-project/vllm/pull/56579"
   author="kushaldabbe" avatar_id=72650064 commits=2 base="main" head="fix/triton-softcap-overflow"
+  logo="/assets/img/brands/vllm.png"
   files=2 add=47 del=5 when="22 Sep 2026"
   gh_body='<strong>NaN poisoning in Triton attention.</strong> The softcap computed tanh via raw exponentials; scores above ~4400 overflowed to <code>inf</code>, so the ratio became <code>inf/inf = NaN</code> and the whole attention row died; reachable on Gemma-2 style models that use softcapping precisely because their logits are large. The fix rewrites tanh in a saturating form; the new test fails on main and passes with the fix, with 336 softcap tests green.' %}
 
@@ -180,8 +181,17 @@ tracks the projects and notes from that work.
   repo="vllm-project/vllm" num=55548 title="[Bugfix][LoRA] Use stored rsLoRA scaling factor in MoE expert packing"
   url="https://github.com/vllm-project/vllm/pull/55548"
   author="kushaldabbe" avatar_id=72650064 commits=5 base="main" head="fix/lora-moe-rslora-scaling"
+  logo="/assets/img/brands/vllm.png"
   files=2 add=56 del=3 when="11 Sep 2026"
   gh_body='<strong>First merged contribution to vLLM.</strong> MoE expert packing recomputed LoRA scaling as <code>alpha/rank</code> and dropped the stored rsLoRA factor (<code>alpha/&radic;r</code>), so adapters trained with <code>use_rslora</code> applied a delta &radic;r times weaker - silently. The fix stores and reuses the scaling factor; the test suite went from 3 failed / 2 passed to 5 passed.' %}
+
+{% include kd-gh-pr-card.html
+  repo="sgl-project/sglang" num=46267 title="[Fix] MegaMoE: stop double-dividing the DP prefill budget"
+  url="https://github.com/sgl-project/sglang/pull/46267"
+  author="kushaldabbe" avatar_id=72650064 commits=1 base="main" head="fix/megamoe-dp-token-budget"
+  logo="/assets/img/brands/sglang.png"
+  files=2 add=34 del=2 when="28 Oct 2026"
+  gh_body='<strong>First merged contribution to SGLang.</strong> With attention DP on, the MegaMoE startup check divided <code>chunked_prefill_size</code> by <code>attn_dp_size</code> a second time, after <code>handle_data_parallelism</code> had already stored the per-rank value. With <code>--chunked-prefill-size 16384 --attn-dp-size 2</code> the validator saw 4096 while each rank could receive 8192 tokens, so an undersized token cap passed startup and later failed the runtime assertion or fell back off the MegaMoE path. The fix uses the resolved value and adds a regression test.' %}
 
 ## Experience
 

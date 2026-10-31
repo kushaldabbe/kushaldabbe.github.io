@@ -6,7 +6,10 @@
     </div>
     <span class="kd-gh-badge"><i class="fas fa-code-branch"></i> Merged</span>
   </div>
-  <div class="kd-gh-title"><a href="{{ include.url }}">{{ include.title }} <span class="kd-gh-num">#{{ include.num }}</span></a></div>
+  <div class="kd-gh-title">
+    {% if include.logo %}<img class="kd-gh-repo-logo" src="{{ include.logo | relative_url }}" alt="{{ include.repo }} logo">{% endif %}
+    <a href="{{ include.url }}">{{ include.title }} <span class="kd-gh-num">#{{ include.num }}</span></a>
+  </div>
   <div class="kd-gh-diffstat">
     <span>{{ include.files }} files changed</span>
     <span><span class="kd-gh-add">+{{ include.add }}</span> <span class="kd-gh-del">&minus;{{ include.del }}</span></span>
