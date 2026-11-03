@@ -170,6 +170,14 @@ tracks the projects and notes from that work.
 ## Milestones
 
 {% include kd-gh-pr-card.html
+  repo="vllm-project/vllm" num=62470 title="[Bugfix][LoRA] Scale embedding LoRA deltas by the base layer's embed_scale"
+  url="https://github.com/vllm-project/vllm/pull/62470"
+  author="kushaldabbe" avatar_id=72650064 commits=2 base="main" head="fix/lora-embed-scale"
+  logo="/assets/img/brands/vllm.png"
+  files=2 add=26 del=3 when="3 Nov 2026"
+  gh_body='<strong>Embedding LoRA was scaled down by <code>embed_scale</code>.</strong> On Transformers-backend models with a scaled input embedding (VaultGemma; Gemma with <code>--model-impl transformers</code>), the base embedding multiplied the lookup by <code>embed_scale</code>, but the LoRA delta was added without it, so an <code>embed_tokens</code> adapter had only <code>1 / embed_scale</code> of its effect. PEFT scales the delta, and merged adapters are scaled by construction. The fix multiplies <code>lora_b</code> by <code>embed_scale</code> once in <code>set_lora</code>; the delta ratio goes from 0.0625 to 1.0000 and the max diff vs PEFT embeddings from 1.11 to 2.4e-07.' %}
+
+{% include kd-gh-pr-card.html
   repo="vllm-project/vllm" num=56579 title="[Bugfix][Attention] Avoid NaN in the Triton softcap for large attention logits"
   url="https://github.com/vllm-project/vllm/pull/56579"
   author="kushaldabbe" avatar_id=72650064 commits=2 base="main" head="fix/triton-softcap-overflow"
