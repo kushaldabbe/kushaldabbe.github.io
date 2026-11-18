@@ -12,6 +12,7 @@
 - [Second vLLM PR merged](https://kushaldabbe.github.io/posts/vllm-triton-softcap-nan-fix/): bugfix story for vLLM #56579 — NaN poisoning in the Triton attention softcap for large logits; merged upstream 22 September 2026.
 - [Third vLLM PR merged](https://kushaldabbe.github.io/posts/vllm-embedding-lora-embed-scale/): bugfix story for vLLM #62470 — embedding LoRA deltas were not scaled by the base layer's embed_scale; merged upstream 3 November 2026.
 - [First SGLang PR merged](https://kushaldabbe.github.io/posts/sglang-megamoe-dp-token-budget/): bugfix story for SGLang #46267 — the MegaMoE startup check divided the attention-DP prefill budget twice; merged upstream 28 October 2026.
+- [Muse Spark kernel challenge](https://kushaldabbe.github.io/posts/muse-spark-kernel-challenge/): two weeks of CUDA kernels for one Muse Spark Open decoder layer, raced against SGLang on an H200 in the Open Kernel Challenge; whole layer 1.75× faster, MoE 2.03×.
 
 ## Optional
 
