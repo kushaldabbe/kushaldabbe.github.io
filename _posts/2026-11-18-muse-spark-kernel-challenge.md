@@ -1,6 +1,6 @@
 ---
 title: "Five kernels against SGLang: my Muse Spark Open Kernel Challenge"
-date: 2026-11-07 10:00:00 +0900
+date: 2026-11-18 12:00:00 +0900
 
 ---
 
